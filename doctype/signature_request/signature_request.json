@@ -1,6 +1,10 @@
 {
+    "actions": [],
+    "allow_rename": 1,
+    "autoname": "SIG-REQ-.YYYY.-.MM.-.#####",
     "creation": "2024-01-01 00:00:00",
     "doctype": "DocType",
+    "editable_grid": 1,
     "engine": "InnoDB",
     "field_order": [
         "title",
@@ -9,7 +13,6 @@
         "column_break_3",
         "status",
         "request_type",
-        "signature_method",
         "section_break_7",
         "recipient_email",
         "recipient_name",
@@ -17,16 +20,9 @@
         "expires_on",
         "reminder_frequency",
         "section_break_13",
-        "document_url",
-        "signed_document_url",
         "signature_token",
-        "column_break_17",
-        "ip_address",
         "signed_at",
-        "signature_coordinates",
-        "section_break_21",
-        "email_subject",
-        "email_message"
+        "ip_address"
     ],
     "fields": [
         {
@@ -68,13 +64,6 @@
             "reqd": 1
         },
         {
-            "fieldname": "signature_method",
-            "fieldtype": "Select",
-            "label": "Signature Method",
-            "options": "Digital Certificate\nDrawn Signature\nType Signature",
-            "default": "Drawn Signature"
-        },
-        {
             "fieldname": "section_break_7",
             "fieldtype": "Section Break",
             "label": "Recipient Details"
@@ -110,34 +99,12 @@
         {
             "fieldname": "section_break_13",
             "fieldtype": "Section Break",
-            "label": "Document & Signature Details"
-        },
-        {
-            "fieldname": "document_url",
-            "fieldtype": "Small Text",
-            "label": "Document URL",
-            "read_only": 1
-        },
-        {
-            "fieldname": "signed_document_url",
-            "fieldtype": "Small Text",
-            "label": "Signed Document URL",
-            "read_only": 1
+            "label": "Signature Details"
         },
         {
             "fieldname": "signature_token",
             "fieldtype": "Data",
             "label": "Signature Token",
-            "read_only": 1
-        },
-        {
-            "fieldname": "column_break_17",
-            "fieldtype": "Column Break"
-        },
-        {
-            "fieldname": "ip_address",
-            "fieldtype": "Data",
-            "label": "IP Address",
             "read_only": 1
         },
         {
@@ -147,33 +114,20 @@
             "read_only": 1
         },
         {
-            "fieldname": "signature_coordinates",
-            "fieldtype": "Small Text",
-            "label": "Signature Coordinates",
-            "read_only": 1
-        },
-        {
-            "fieldname": "section_break_21",
-            "fieldtype": "Section Break",
-            "label": "Email Configuration"
-        },
-        {
-            "fieldname": "email_subject",
+            "fieldname": "ip_address",
             "fieldtype": "Data",
-            "label": "Email Subject"
-        },
-        {
-            "fieldname": "email_message",
-            "fieldtype": "Text Editor",
-            "label": "Email Message"
+            "label": "IP Address",
+            "read_only": 1
         }
     ],
+    "index_web_pages_for_search": 1,
+    "istable": 0,
+    "links": [],
     "modified": "2024-01-01 00:00:00",
     "modified_by": "Administrator",
     "module": "E-Signature",
     "name": "Signature Request",
     "naming_rule": "Expression (old style)",
-    "autoname": "SIG-REQ-.YYYY.-.MM.-.#####",
     "owner": "Administrator",
     "permissions": [
         {
@@ -189,6 +143,8 @@
             "write": 1
         }
     ],
+    "sort_field": "modified",
+    "sort_order": "DESC",
     "title_field": "title",
     "track_changes": 1
 }
