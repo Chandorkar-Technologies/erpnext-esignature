@@ -1,0 +1,130 @@
+{
+    "creation": "2024-01-01 00:00:00",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+        "certificate_name",
+        "certificate_type",
+        "column_break_3",
+        "is_active",
+        "certificate_file",
+        "private_key_file",
+        "column_break_6",
+        "password",
+        "valid_from",
+        "valid_till",
+        "section_break_9",
+        "issuer",
+        "subject",
+        "fingerprint",
+        "section_break_13",
+        "usage_permissions"
+    ],
+    "fields": [
+        {
+            "fieldname": "certificate_name",
+            "fieldtype": "Data",
+            "label": "Certificate Name",
+            "reqd": 1,
+            "unique": 1
+        },
+        {
+            "fieldname": "certificate_type",
+            "fieldtype": "Select",
+            "label": "Certificate Type",
+            "options": "Internal\nExternal\nCA Root",
+            "reqd": 1
+        },
+        {
+            "fieldname": "column_break_3",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "is_active",
+            "fieldtype": "Check",
+            "label": "Is Active",
+            "default": 1
+        },
+        {
+            "fieldname": "certificate_file",
+            "fieldtype": "Attach",
+            "label": "Certificate File (.p12/.pfx)"
+        },
+        {
+            "fieldname": "private_key_file",
+            "fieldtype": "Attach",
+            "label": "Private Key File (Optional)"
+        },
+        {
+            "fieldname": "column_break_6",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "password",
+            "fieldtype": "Password",
+            "label": "Certificate Password"
+        },
+        {
+            "fieldname": "valid_from",
+            "fieldtype": "Date",
+            "label": "Valid From"
+        },
+        {
+            "fieldname": "valid_till",
+            "fieldtype": "Date",
+            "label": "Valid Till"
+        },
+        {
+            "fieldname": "section_break_9",
+            "fieldtype": "Section Break",
+            "label": "Certificate Details"
+        },
+        {
+            "fieldname": "issuer",
+            "fieldtype": "Small Text",
+            "label": "Issued By"
+        },
+        {
+            "fieldname": "subject",
+            "fieldtype": "Small Text",
+            "label": "Subject"
+        },
+        {
+            "fieldname": "fingerprint",
+            "fieldtype": "Data",
+            "label": "Fingerprint"
+        },
+        {
+            "fieldname": "section_break_13",
+            "fieldtype": "Section Break",
+            "label": "Permissions"
+        },
+        {
+            "fieldname": "usage_permissions",
+            "fieldtype": "Table",
+            "label": "Usage Permissions",
+            "options": "Certificate Usage Permission"
+        }
+    ],
+    "modified": "2024-01-01 00:00:00",
+    "modified_by": "Administrator",
+    "module": "E-Signature",
+    "name": "Digital Certificate",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        }
+    ],
+    "track_changes": 1
+}
