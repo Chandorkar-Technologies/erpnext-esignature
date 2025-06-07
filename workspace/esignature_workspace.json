@@ -1,0 +1,135 @@
+{
+    "charts": [
+        {
+            "chart_name": "Signature Requests by Status",
+            "label": "Signature Requests by Status"
+        },
+        {
+            "chart_name": "Monthly Signature Trends",
+            "label": "Monthly Signature Trends"
+        }
+    ],
+    "content": "[{\"id\":\"_tJdZjQuZ2\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">E-Signature Dashboard</span>\",\"col\":12}},{\"id\":\"_F8DjQkV32\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Signature Request\",\"col\":3}},{\"id\":\"_K2LmB9X48\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Digital Certificate\",\"col\":3}},{\"id\":\"_M7YnC5R19\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Signature Requests by Status\",\"col\":6}},{\"id\":\"_P9XcD2Q73\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Monthly Signature Trends\",\"col\":6}}]",
+    "creation": "2024-01-01 00:00:00",
+    "developer_mode_only": 0,
+    "disable_user_customization": 0,
+    "docstatus": 0,
+    "doctype": "Workspace",
+    "for_user": "",
+    "hide_custom": 0,
+    "icon": "signature",
+    "idx": 0,
+    "is_hidden": 0,
+    "label": "E-Signature",
+    "links": [
+        {
+            "dependencies": "",
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "Documents",
+            "link_count": 0,
+            "link_to": "",
+            "link_type": "DocType",
+            "onboard": 0,
+            "type": "Card Break"
+        },
+        {
+            "dependencies": "",
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "Signature Request",
+            "link_count": 0,
+            "link_to": "Signature Request",
+            "link_type": "DocType",
+            "onboard": 1,
+            "type": "Link"
+        },
+        {
+            "dependencies": "",
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "Digital Certificate",
+            "link_count": 0,
+            "link_to": "Digital Certificate",
+            "link_type": "DocType",
+            "onboard": 1,
+            "type": "Link"
+        },
+        {
+            "dependencies": "",
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "Reports",
+            "link_count": 0,
+            "link_to": "",
+            "link_type": "DocType",
+            "onboard": 0,
+            "type": "Card Break"
+        },
+        {
+            "dependencies": "",
+            "hidden": 0,
+            "is_query_report": 1,
+            "label": "Signature Analytics",
+            "link_count": 0,
+            "link_to": "Signature Analytics",
+            "link_type": "Report",
+            "onboard": 0,
+            "type": "Link"
+        },
+        {
+            "dependencies": "",
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "Settings",
+            "link_count": 0,
+            "link_to": "",
+            "link_type": "DocType",
+            "onboard": 0,
+            "type": "Card Break"
+        },
+        {
+            "dependencies": "",
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "E-Signature Settings",
+            "link_count": 0,
+            "link_to": "E-Signature Settings",
+            "link_type": "DocType",
+            "onboard": 0,
+            "type": "Link"
+        }
+    ],
+    "modified": "2024-01-01 00:00:00",
+    "modified_by": "Administrator",
+    "module": "E-Signature",
+    "name": "E-Signature",
+    "number_cards": [],
+    "owner": "Administrator",
+    "parent_page": "",
+    "public": 1,
+    "quick_lists": [],
+    "roles": [],
+    "sequence_id": 1,
+    "shortcuts": [
+        {
+            "color": "Blue",
+            "doc_view": "List",
+            "format": "{} Open",
+            "label": "Signature Request",
+            "link_to": "Signature Request",
+            "stats_filter": "{\"status\": [\"in\", [\"Sent\", \"Viewed\"]]}",
+            "type": "DocType"
+        },
+        {
+            "color": "Green",
+            "doc_view": "List",
+            "format": "{} Active",
+            "label": "Digital Certificate",
+            "link_to": "Digital Certificate",
+            "stats_filter": "{\"is_active\": 1}",
+            "type": "DocType"
+        }
+    ],
+    "title": "E-Signature"
+}

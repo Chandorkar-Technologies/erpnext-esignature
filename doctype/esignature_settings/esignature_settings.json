@@ -1,0 +1,178 @@
+{
+    "creation": "2024-01-01 00:00:00",
+    "doctype": "DocType",
+    "engine": "InnoDB",
+    "field_order": [
+        "general_settings_section",
+        "default_expiry_days",
+        "auto_reminder_enabled",
+        "column_break_4",
+        "default_reminder_frequency",
+        "max_signing_attempts",
+        "section_break_7",
+        "email_settings_section",
+        "sender_email",
+        "email_signature",
+        "column_break_11",
+        "custom_email_footer",
+        "section_break_13",
+        "security_settings_section",
+        "rate_limit_enabled",
+        "max_requests_per_hour",
+        "column_break_17",
+        "audit_log_retention_days",
+        "section_break_19",
+        "integration_settings_section",
+        "webhook_url",
+        "webhook_secret",
+        "column_break_23",
+        "external_storage_enabled",
+        "storage_provider"
+    ],
+    "fields": [
+        {
+            "fieldname": "general_settings_section",
+            "fieldtype": "Section Break",
+            "label": "General Settings"
+        },
+        {
+            "default": "7",
+            "fieldname": "default_expiry_days",
+            "fieldtype": "Int",
+            "label": "Default Expiry Days",
+            "reqd": 1
+        },
+        {
+            "default": 1,
+            "fieldname": "auto_reminder_enabled",
+            "fieldtype": "Check",
+            "label": "Auto Reminder Enabled"
+        },
+        {
+            "fieldname": "column_break_4",
+            "fieldtype": "Column Break"
+        },
+        {
+            "default": "Every 3 Days",
+            "fieldname": "default_reminder_frequency",
+            "fieldtype": "Select",
+            "label": "Default Reminder Frequency",
+            "options": "No Reminders\nDaily\nEvery 3 Days\nWeekly"
+        },
+        {
+            "default": "3",
+            "fieldname": "max_signing_attempts",
+            "fieldtype": "Int",
+            "label": "Max Signing Attempts"
+        },
+        {
+            "fieldname": "section_break_7",
+            "fieldtype": "Section Break"
+        },
+        {
+            "fieldname": "email_settings_section",
+            "fieldtype": "Section Break",
+            "label": "Email Settings"
+        },
+        {
+            "fieldname": "sender_email",
+            "fieldtype": "Data",
+            "label": "Default Sender Email"
+        },
+        {
+            "fieldname": "email_signature",
+            "fieldtype": "Text Editor",
+            "label": "Email Signature"
+        },
+        {
+            "fieldname": "column_break_11",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "custom_email_footer",
+            "fieldtype": "Text Editor",
+            "label": "Custom Email Footer"
+        },
+        {
+            "fieldname": "section_break_13",
+            "fieldtype": "Section Break"
+        },
+        {
+            "fieldname": "security_settings_section",
+            "fieldtype": "Section Break",
+            "label": "Security Settings"
+        },
+        {
+            "default": 1,
+            "fieldname": "rate_limit_enabled",
+            "fieldtype": "Check",
+            "label": "Rate Limit Enabled"
+        },
+        {
+            "default": "10",
+            "fieldname": "max_requests_per_hour",
+            "fieldtype": "Int",
+            "label": "Max Requests Per Hour"
+        },
+        {
+            "fieldname": "column_break_17",
+            "fieldtype": "Column Break"
+        },
+        {
+            "default": "365",
+            "fieldname": "audit_log_retention_days",
+            "fieldtype": "Int",
+            "label": "Audit Log Retention Days"
+        },
+        {
+            "fieldname": "section_break_19",
+            "fieldtype": "Section Break"
+        },
+        {
+            "fieldname": "integration_settings_section",
+            "fieldtype": "Section Break",
+            "label": "Integration Settings"
+        },
+        {
+            "fieldname": "webhook_url",
+            "fieldtype": "Data",
+            "label": "Webhook URL"
+        },
+        {
+            "fieldname": "webhook_secret",
+            "fieldtype": "Password",
+            "label": "Webhook Secret"
+        },
+        {
+            "fieldname": "column_break_23",
+            "fieldtype": "Column Break"
+        },
+        {
+            "default": 0,
+            "fieldname": "external_storage_enabled",
+            "fieldtype": "Check",
+            "label": "External Storage Enabled"
+        },
+        {
+            "fieldname": "storage_provider",
+            "fieldtype": "Select",
+            "label": "Storage Provider",
+            "options": "Local\nAWS S3\nGoogle Cloud Storage\nAzure Blob Storage"
+        }
+    ],
+    "issingle": 1,
+    "modified": "2024-01-01 00:00:00",
+    "modified_by": "Administrator",
+    "module": "E-Signature",
+    "name": "E-Signature Settings",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "read": 1,
+            "role": "System Manager",
+            "write": 1
+        }
+    ],
+    "track_changes": 1
+}

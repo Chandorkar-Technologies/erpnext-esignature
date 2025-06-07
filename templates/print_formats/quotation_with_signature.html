@@ -1,0 +1,140 @@
+<div class="print-format">
+    <div class="print-heading">
+        <h2>{{ doc.title or "Quotation" }}</h2>
+    </div>
+    
+    <div class="row">
+        <div class="col-xs-6">
+            <h4>{{ _("From") }}:</h4>
+            <p>
+                <strong>{{ frappe.defaults.get_defaults().company }}</strong><br>
+                {{ frappe.get_doc("Company", frappe.defaults.get_defaults().company).address_line1 }}<br>
+                {{ frappe.get_doc("Company", frappe.defaults.get_defaults().company).city }}
+            </p>
+        </div>
+        <div class="col-xs-6 text-right">
+            <h4>{{ _("To") }}:</h4>
+            <p>
+                <strong>{{ doc.customer_name }}</strong><br>
+                {% if doc.customer_address %}
+                    {{ frappe.get_doc("Address", doc.customer_address).address_line1 }}<br>
+                    {{ frappe.get_doc("Address", doc.customer_address).city }}
+                {% endif %}
+            </p>
+        </div>
+    </div>
+    
+    <div class="row section-break">
+        <div class="col-xs-6">
+            <p><strong>{{ _("Quotation No") }}:</strong> {{ doc.name }}</p>
+            <p><strong>{{ _("Date") }}:</strong> {{ frappe.utils.formatdate(doc.transaction_date) }}</p>
+        </div>
+        <div class="col-xs-6 text-right">
+            <p><strong>{{ _("Valid Till") }}:</strong> {{ frappe.utils.formatdate(doc.valid_till) }}</p>
+        </div>
+    </div>
+    
+    <!-- Items Table -->
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>{{ _("Item") }}</th>
+                <th>{{ _("Description") }}</th>
+                <th class="text-right">{{ _("Qty") }}</th>
+                <th class="text-right">{{ _("Rate") }}</th>
+                <th class="text-right">{{ _("Amount") }}</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in doc.items %}
+            <tr>
+                <td>{{ item.item_code }}</td>
+                <td>{{ item.description }}</td>
+                <td class="text-right">{{ item.qty }}</td>
+                <td class="text-right">{{ frappe.utils.fmt_money(item.rate, currency=doc.currency) }}</td>
+                <td class="text-right">{{ frappe.utils.fmt_money(item.amount, currency=doc.currency) }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+    <!-- Totals -->
+    <div class="row">
+        <div class="col-xs-6"></div>
+        <div class="col-xs-6">
+            <table class="table table-condensed">
+                <tr>
+                    <td><strong>{{ _("Total") }}</strong></td>
+                    <td class="text-right"><strong>{{ frappe.utils.fmt_money(doc.grand_total, currency=doc.currency) }}</strong></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    
+    <!-- Terms and Conditions -->
+    {% if doc.terms %}
+    <div class="section-break">
+        <h4>{{ _("Terms and Conditions") }}</h4>
+        <p>{{ doc.terms }}</p>
+    </div>
+    {% endif %}
+    
+    <!-- Signature Section -->
+    <div class="signature-section" style="margin-top: 50px;">
+        <div class="row">
+            <div class="col-xs-6">
+                <h4>{{ _("Company Signature") }}</h4>
+                <div style="border: 1px solid #ddd; height: 80px; margin-top: 10px; background: #f9f9f9;">
+                    <!-- Digital signature will be embedded here -->
+                    <div style="padding: 20px; text-align: center; color: #666;">
+                        Digitally Signed
+                    </div>
+                </div>
+                <p style="margin-top: 10px;">
+                    <strong>Authorized Signatory</strong><br>
+                    {{ frappe.defaults.get_defaults().company }}
+                </p>
+            </div>
+            <div class="col-xs-6">
+                <h4>{{ _("Customer Signature") }}</h4>
+                <div style="border: 1px solid #ddd; height: 80px; margin-top: 10px;">
+                    <!-- Customer signature placeholder -->
+                </div>
+                <p style="margin-top: 10px;">
+                    <strong>{{ doc.customer_name }}</strong><br>
+                    Date: ___________
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.print-format {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+.print-heading {
+    text-align: center;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+}
+
+.section-break {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.signature-section {
+    page-break-inside: avoid;
+}
+
+@media print {
+    .signature-section {
+        margin-top: 30px;
+    }
+}
+</style>

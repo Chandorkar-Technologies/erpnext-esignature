@@ -1,0 +1,51 @@
+{
+    "add_total_row": 0,
+    "columns": [],
+    "creation": "2024-01-01 00:00:00",
+    "disable_prepared_report": 0,
+    "disabled": 0,
+    "docstatus": 0,
+    "doctype": "Report",
+    "filters": [
+        {
+            "fieldname": "from_date",
+            "fieldtype": "Date",
+            "label": "From Date",
+            "mandatory": 0,
+            "wildcard_filter": 0
+        },
+        {
+            "fieldname": "to_date",
+            "fieldtype": "Date", 
+            "label": "To Date",
+            "mandatory": 0,
+            "wildcard_filter": 0
+        },
+        {
+            "fieldname": "request_type",
+            "fieldtype": "Select",
+            "label": "Request Type",
+            "mandatory": 0,
+            "options": "\nExternal Customer\nExternal Vendor\nInternal Employee",
+            "wildcard_filter": 0
+        }
+    ],
+    "is_standard": "Yes",
+    "modified": "2024-01-01 00:00:00",
+    "modified_by": "Administrator",
+    "module": "E-Signature",
+    "name": "Signature Analytics",
+    "owner": "Administrator",
+    "prepared_report": 0,
+    "ref_doctype": "Signature Request",
+    "report_name": "Signature Analytics",
+    "report_type": "Script Report",
+    "roles": [
+        {
+            "role": "System Manager"
+        },
+        {
+            "role": "Signature Manager"
+        }
+    ]
+}
