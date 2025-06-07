@@ -14,3 +14,6 @@ doc_events = {
         "before_submit": "esignature.utils.document_handler.handle_internal_signature"
     }
 }
+
+# Whitelisted methods for API access
+boot_session = "esignature.boot.boot_session"
